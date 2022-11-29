@@ -28,6 +28,13 @@
 }
 .App-text{
   color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.info>input{
+  display: flex;
+  width: 300px;
 }
 
 @keyframes App-logo-spin {
