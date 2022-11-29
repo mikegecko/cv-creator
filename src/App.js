@@ -20,3 +20,14 @@ class App extends Component {
 }
 
 export default App;
+/*
+  Possible ideas for entering info:
+  - Basic input section with CV display below (easy)
+  - Sidebar opens to input fields with CV behind (difficult)
+  - Screen wipe with header to reveal CV or input fields (very difficult)
+
+  Extra:
+  - CV style selection using cards
+  - PDF export
+  
+*/

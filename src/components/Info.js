@@ -5,12 +5,15 @@ class Info extends Component {
     super(props);
   }
   /*
+✅ ❌
         Create a form with the follwoing input fields
-        -   Name
-        -   email
-        -   phone #
-        - Current job title
-        - Edit / delete button
+        ✅ Name
+        ✅ email
+        ✅ phone #
+        ❌ Current job title
+        ❌ Photo select
+        ❌ Address
+        ❌ Edit / delete button
     */
 
   render() {

@@ -1,11 +1,19 @@
 import { Component } from "react";
 import Info from "./Info";
+import Edu from "./Edu";
+import Display from "./Display";
+
 
 class MainWrapper extends Component {
     constructor(props){
         super(props);
         this.infoSubmit = this.infoSubmit.bind(this);
-        this.state = { name: "", email: "", phone: "" };
+        this.eduSubmit = this.eduSubmit.bind(this);
+        //TODO: figure out how to structure state 
+        //      so that new properties can be added to it dynamically
+        // [{info},{education0},{eduaction1},{experience0},{experience1}...]
+
+        this.state = { name: "", email: "", phone: "", };
     }
     infoSubmit(event) {
         event.preventDefault();
@@ -15,10 +23,18 @@ class MainWrapper extends Component {
             phone: event.target.phonein.value
         })
     }
+    eduSubmit(event){
+        event.preventDefault();
+        this.setState({
+
+        })
+    }
     render(){
         return(
             <div>
                 <Info infoSubmit={this.infoSubmit}/>
+                <Edu eduSubmit={this.eduSubmit} />
+                <Display data={this.state}/>
             </div>
         );
     }
