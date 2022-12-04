@@ -7,9 +7,9 @@ class Display extends Component{
     render(){
         return(
             <div className="App-text">
-                <h2>{this.props.data.name}</h2>
-                <p>Phone:{this.props.data.phone}</p>
-                <p>Email:{this.props.data.email}</p>
+                <h2>{this.props.data.geninfo.name}</h2>
+                <p>Phone:{this.props.data.geninfo.phone}</p>
+                <p>Email:{this.props.data.geninfo.email}</p>
             </div>
         );
     }

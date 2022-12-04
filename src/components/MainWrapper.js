@@ -14,28 +14,35 @@ class MainWrapper extends Component {
         // [{info},{education0},{eduaction1},{experience0},{experience1}...]
 
         this.state = { geninfo: {name: "", address: "", email: "", phone: "", },
-                       work: [{title: "", company: "", location: "", startyr: "", endyr: "", desc: ""}],
-                       education: [{uname: "", city: "", degree: "", field: "", gradyr: ""},],};
+                       work: [{title: "temp", company: "", location: "", startyr: "", endyr: "", desc: ""}],
+                       education: [{uname: "Temp U", city: "", degree: "", field: "", gradyr: ""},],};
     }
     infoSubmit(event) {
         event.preventDefault();
-        this.setState({
+        //This is easy to update because its not in a dynamic array 
+        //Editing this after submission might cause data loss bugs
+        this.setState({geninfo: {
             name: event.target.namein.value,
             email: event.target.emailin.value,
-            phone: event.target.phonein.value
-        })
+            phone: event.target.phonein.value,
+        }})
     }
-    eduSubmit(event){
+    eduSubmit(index,event){
+        // You need a key/index value to update proper array item from the event
+        let key = index;
+        console.log(key);
         event.preventDefault();
-        this.setState({
-
-        })
+        this.setState(prevState => ({
+            education: prevState.education.map(
+                (el, index) => index === key ? {uname: event.target.unamein.value, city: event.target.ucityin.value, degree: event.target.degreein.value, field: event.target.subjectin.value, gradyr: event.target.uyearin.value } : el
+            )
+        }))
     }
     render(){
         return(
             <div>
                 <Info infoSubmit={this.infoSubmit}/>
-                <Edu eduSubmit={this.eduSubmit} />
+                <Edu data={this.state} eduSubmit={this.eduSubmit} />
                 <Display data={this.state}/>
             </div>
         );
