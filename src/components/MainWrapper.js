@@ -13,7 +13,9 @@ class MainWrapper extends Component {
         //      so that new properties can be added to it dynamically
         // [{info},{education0},{eduaction1},{experience0},{experience1}...]
 
-        this.state = { name: "", email: "", phone: "", };
+        this.state = { geninfo: {name: "", address: "", email: "", phone: "", },
+                       work: [{title: "", company: "", location: "", startyr: "", endyr: "", desc: ""}],
+                       education: [{uname: "", city: "", degree: "", field: "", gradyr: ""},],};
     }
     infoSubmit(event) {
         event.preventDefault();
