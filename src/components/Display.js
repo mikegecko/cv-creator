@@ -10,6 +10,7 @@ class Display extends Component{
                 <h2>{this.props.data.geninfo.name}</h2>
                 <p>Phone:{this.props.data.geninfo.phone}</p>
                 <p>Email:{this.props.data.geninfo.email}</p>
+                <p>Degree:{this.props.data.education[0].degree}</p>
             </div>
         );
     }

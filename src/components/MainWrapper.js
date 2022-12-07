@@ -9,6 +9,7 @@ class MainWrapper extends Component {
         super(props);
         this.infoSubmit = this.infoSubmit.bind(this);
         this.eduSubmit = this.eduSubmit.bind(this);
+        this.addEdu = this.addEdu.bind(this);
         //TODO: figure out how to structure state 
         //      so that new properties can be added to it dynamically
         // [{info},{education0},{eduaction1},{experience0},{experience1}...]
@@ -38,11 +39,20 @@ class MainWrapper extends Component {
             )
         }))
     }
+    addEdu(){
+        let newEdu = {uname: "", city: "", degree: "", field: "", gradyr: ""};
+        this.setState(prevState => ({
+            education: [...prevState.education, newEdu]
+        }));
+    }
     render(){
         return(
             <div>
                 <Info infoSubmit={this.infoSubmit}/>
+                <div>
                 <Edu data={this.state} eduSubmit={this.eduSubmit} />
+                    <button onClick={this.addEdu}>Add More Education</button>
+                </div>
                 <Display data={this.state}/>
             </div>
         );
