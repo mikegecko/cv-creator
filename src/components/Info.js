@@ -18,21 +18,22 @@ class Info extends Component {
 
   render() {
     return (
-      <div className="App-text">
-        <form className="info" onSubmit={this.props.infoSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name='namein'></input>
-          <br />
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name='emailin'></input>
-          <br />
-          <label htmlFor="phone">Phone Number:</label>
-          <input type="tel" id="phone" name='phonein'></input>
-          <br />
-          <button type="submit">
-            Add Info
-          </button>
-        </form>
+      <div className="App-text App-info">
+        <div className="wrapper">
+            <h2>General Info</h2>
+            <div className="container">
+                <form className="info" onSubmit={this.props.infoSubmit}>
+                  <div className="form">
+                      <input type="text" id="name" name='namein' placeholder="Full Name"></input>
+                      <input type="email" id="email" name='emailin' placeholder="Email"></input>
+                      <input type="tel" id="phone" name='phonein' placeholder="Phone #"></input>
+                      <button className="submit-btn" type="submit">
+                        Add Info
+                      </button>
+                  </div>
+                </form>
+            </div>
+        </div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: rgb(17 24 39);
-  height: 100vh;
+  height: 100%;
 }
 
 
@@ -31,12 +31,48 @@
   display: flex;
   justify-content: center;
 }
-
+.App-info{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.App-edu{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.wrapper{
+  border-radius: .7rem;
+  background-color: rgb(56, 68, 95);
+  width: 350px;
+  margin: 1rem;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .3rem;
+}
+.form>input{
+  width: 300px;
+}
 .info>input{
   display: flex;
   width: 300px;
 }
-
+.submit-btn{
+  margin: .3rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
