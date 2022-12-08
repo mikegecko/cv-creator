@@ -4,6 +4,14 @@ import Edu from "./Edu";
 import Display from "./Display";
 import Exp from "./Exp";
 
+/* 
+    TODO:
+    - Redo styling of form to something less ugly
+    - Idea: use a tab style to hold each form in its own page
+
+    - Make the description for work and education and info
+    - make them into arrays of items and display them in an unordered list
+*/
 
 class MainWrapper extends Component {
     constructor(props){
@@ -13,12 +21,9 @@ class MainWrapper extends Component {
         this.workSubmit = this.workSubmit.bind(this);
         this.addEdu = this.addEdu.bind(this);
         this.addWork = this.addWork.bind(this);
-        //TODO: figure out how to structure state 
-        //      so that new properties can be added to it dynamically
-        // [{info},{education0},{eduaction1},{experience0},{experience1}...]
-
+        this.removeFields = this.removeFields.bind(this);
         this.state = { geninfo: {name: "", address: "", email: "", phone: "", },
-                       work: [{title: "temp", company: "", location: "", startyr: "", endyr: "", desc: ""}],
+                       work: [{title: "Barista Attendant", company: "Starbucks", location: "Albany, NY", startyr: "2010", endyr: "2015", desc: ""}],
                        education: [{uname: "Temp U", city: "", degree: "", field: "", gradyr: ""},],};
     }
     infoSubmit(event) {
@@ -64,12 +69,17 @@ class MainWrapper extends Component {
             work: [...prevState.work, newWork]
         }));
     }
+    removeFields(index){
+        let editState = this.state;
+        editState.education.splice(index,1);
+        this.setState(editState);
+    }
     render(){
         return(
             <div>
                 <Info infoSubmit={this.infoSubmit}/>
                 <div>
-                    <Edu data={this.state} eduSubmit={this.eduSubmit} />
+                    <Edu data={this.state} eduSubmit={this.eduSubmit} removeFields={this.removeFields}/>
                     <button onClick={this.addEdu}>Add More Education</button>
                 </div>
                 <div>

@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import './styles/App.css';
+import './styles/Display.css'
 import Header from './components/Header';
 import MainWrapper from './components/MainWrapper';
 

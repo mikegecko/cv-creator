@@ -23,7 +23,7 @@ class Exp extends Component {
               return (
                 /* Key property must go in top level node */
                 <form
-                  key={index}
+                  key={'w'+index}
                   className="info"
                   onSubmit={(event) => this.props.workSubmit(index, event)}
                 >

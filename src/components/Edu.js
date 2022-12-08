@@ -22,7 +22,7 @@ class Edu extends Component {
               return (
                 /* Key property must go in top level node */
                 <form
-                  key={index}
+                  key={'e'+index}
                   className="info"
                   onSubmit={(event) => this.props.eduSubmit(index, event)}
                 >
@@ -60,6 +60,7 @@ class Edu extends Component {
                     <button className="submit-btn" type="submit">
                       Add Info
                     </button>
+                    <button onClick={() => this.props.removeFields(index)}>Remove</button>
                   </div>
                 </form>
               );

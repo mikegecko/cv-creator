@@ -1,0 +1,62 @@
+.cv-page{
+    display: flex;
+    min-height: 870px;
+    min-width: 680px;
+    background-color: rgb(245, 245, 245);
+    color: black;
+    margin: 1rem;
+}
+.cv-sidebar{
+    background-color: rgb(52,52,52);
+    color: white;
+    text-align: start;
+    min-width: 33%;
+}
+.cv-sideheader{
+    background-color: rgb(42,42,42);
+    color: white;
+    padding: .5rem .5rem .5rem 1rem;
+    margin: 1rem 0 0 0;
+}
+.cv-sideitem{
+    padding: 0 0 0 1rem;
+    margin: 0;
+}
+.cv-sidetitle{
+    padding: 1rem 0 .3rem 1rem;
+    margin: 0;
+}
+.cv-area{
+    background-color: whitesmoke;
+    color: black;
+    width: 100%;
+    text-align: start;
+    margin: 1rem;
+}
+.cv-header{
+    text-align: start;
+    padding: .5rem .5rem .5rem 0;
+    border-top: 2px solid rgb(220,220,220);
+    border-bottom: 2px solid rgb(220,220,220);
+    color: rgb(50,50,50);
+    margin-bottom: .5rem;
+}
+.cv-title{
+    margin: 0;
+}
+.cv-info{
+    font-style: italic;
+    font-size: 15px;
+    margin: .5rem 0 .5rem 0;
+}
+.cv-itemcontainer{
+    display: flex;
+    gap: 3rem;
+    justify-content: start;
+    align-items: flex-start;
+}
+.cv-date{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
