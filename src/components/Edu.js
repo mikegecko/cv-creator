@@ -1,5 +1,13 @@
 import { Component } from "react";
-
+/*✅ ❌
+    Form fields:
+    ✅ University name
+    ✅ City
+    ✅ Degree
+    ✅ Subject
+    ❌ Start year
+    ✅ Graduation year
+*/
 class Edu extends Component {
   constructor(props) {
     super(props);
@@ -8,24 +16,55 @@ class Edu extends Component {
     return (
       <div className="App-text App-edu">
         <div className="wrapper">
-            <h2>Education</h2>
-                <div className="container">
-                    {this.props.data.education.map((el,index) => {
-                        return(
-                            /* Key property must go in top level node */
-                            <form  key={index} className="info" onSubmit={event => this.props.eduSubmit(index,event)}>
-                                <div className="form">
-                                    <input type="text" id="uname" name="unamein" placeholder="University Name"></input>
-                                    <input type="text" id="ucity" name="ucityin" placeholder="City"></input>
-                                    <input type="text" id="degree" name="degreein" placeholder="Degree Obtained"></input>
-                                    <input type="text" id="subject" name="subjectin" placeholder="Subject"></input>
-                                    <input type="num" id="degreeyear" name="uyearin" placeholder="Year of Graduation"></input>
-                                    <button className="submit-btn" type="submit">Add Info</button>
-                                </div>
-                            </form>
-                        )
-                    })}
-                </div>
+          <h2>Education</h2>
+          <div className="container">
+            {this.props.data.education.map((el, index) => {
+              return (
+                /* Key property must go in top level node */
+                <form
+                  key={index}
+                  className="info"
+                  onSubmit={(event) => this.props.eduSubmit(index, event)}
+                >
+                  <div className="form">
+                    <input
+                      type="text"
+                      id="uname"
+                      name="unamein"
+                      placeholder="University Name"
+                    ></input>
+                    <input
+                      type="text"
+                      id="ucity"
+                      name="ucityin"
+                      placeholder="City"
+                    ></input>
+                    <input
+                      type="text"
+                      id="degree"
+                      name="degreein"
+                      placeholder="Degree Obtained"
+                    ></input>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subjectin"
+                      placeholder="Subject"
+                    ></input>
+                    <input
+                      type="num"
+                      id="degreeyear"
+                      name="uyearin"
+                      placeholder="Year of Graduation"
+                    ></input>
+                    <button className="submit-btn" type="submit">
+                      Add Info
+                    </button>
+                  </div>
+                </form>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

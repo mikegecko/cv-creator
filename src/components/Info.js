@@ -10,7 +10,6 @@ class Info extends Component {
         ✅ Name
         ✅ email
         ✅ phone #
-        ❌ Current job title
         ❌ Photo select
         ❌ Address
         ❌ Edit / delete button
@@ -20,19 +19,34 @@ class Info extends Component {
     return (
       <div className="App-text App-info">
         <div className="wrapper">
-            <h2>General Info</h2>
-            <div className="container">
-                <form className="info" onSubmit={this.props.infoSubmit}>
-                  <div className="form">
-                      <input type="text" id="name" name='namein' placeholder="Full Name"></input>
-                      <input type="email" id="email" name='emailin' placeholder="Email"></input>
-                      <input type="tel" id="phone" name='phonein' placeholder="Phone #"></input>
-                      <button className="submit-btn" type="submit">
-                        Add Info
-                      </button>
-                  </div>
-                </form>
-            </div>
+          <h2>Personal Info</h2>
+          <div className="container">
+            <form className="info" onSubmit={this.props.infoSubmit}>
+              <div className="form">
+                <input
+                  type="text"
+                  id="name"
+                  name="namein"
+                  placeholder="Full Name"
+                ></input>
+                <input
+                  type="email"
+                  id="email"
+                  name="emailin"
+                  placeholder="Email"
+                ></input>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phonein"
+                  placeholder="Phone #"
+                ></input>
+                <button className="submit-btn" type="submit">
+                  Add Info
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
