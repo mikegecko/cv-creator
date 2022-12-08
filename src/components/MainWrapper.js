@@ -2,6 +2,7 @@ import { Component } from "react";
 import Info from "./Info";
 import Edu from "./Edu";
 import Display from "./Display";
+import Exp from "./Exp";
 
 
 class MainWrapper extends Component {
@@ -9,7 +10,9 @@ class MainWrapper extends Component {
         super(props);
         this.infoSubmit = this.infoSubmit.bind(this);
         this.eduSubmit = this.eduSubmit.bind(this);
+        this.workSubmit = this.workSubmit.bind(this);
         this.addEdu = this.addEdu.bind(this);
+        this.addWork = this.addWork.bind(this);
         //TODO: figure out how to structure state 
         //      so that new properties can be added to it dynamically
         // [{info},{education0},{eduaction1},{experience0},{experience1}...]
@@ -31,13 +34,23 @@ class MainWrapper extends Component {
     eduSubmit(index,event){
         // You need a key/index value to update proper array item from the event
         let key = index;
-        console.log(key);
+        console.log('Edu key:' + key);
         event.preventDefault();
         this.setState(prevState => ({
             education: prevState.education.map(
                 (el, index) => index === key ? {uname: event.target.unamein.value, city: event.target.ucityin.value, degree: event.target.degreein.value, field: event.target.subjectin.value, gradyr: event.target.uyearin.value } : el
             )
-        }))
+        }));
+    }
+    workSubmit(index,event){
+        event.preventDefault();
+        let key = index;
+        console.log('Work key:' + key);
+        this.setState(prevState => ({
+            work: prevState.work.map(
+                (el, index) => index === key ? {title: event.target.titlein.value, company: event.target.companyin.value, location: event.target.wcityin.value, startyr: event.target.wstartyrin.value, endyr: event.target.wendyrin.value} : el
+            )
+        }));
     }
     addEdu(){
         let newEdu = {uname: "", city: "", degree: "", field: "", gradyr: ""};
@@ -45,13 +58,23 @@ class MainWrapper extends Component {
             education: [...prevState.education, newEdu]
         }));
     }
+    addWork(){
+        let newWork = {title: "", company: "", location: "", startyr: "", endyr: "", desc: ""};
+        this.setState(prevState => ({
+            work: [...prevState.work, newWork]
+        }));
+    }
     render(){
         return(
             <div>
                 <Info infoSubmit={this.infoSubmit}/>
                 <div>
-                <Edu data={this.state} eduSubmit={this.eduSubmit} />
+                    <Edu data={this.state} eduSubmit={this.eduSubmit} />
                     <button onClick={this.addEdu}>Add More Education</button>
+                </div>
+                <div>
+                    <Exp data={this.state} workSubmit={this.workSubmit}/>
+                    <button onClick={this.addWork}>Add More Work</button>
                 </div>
                 <Display data={this.state}/>
             </div>
