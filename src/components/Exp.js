@@ -58,9 +58,11 @@ class Exp extends Component {
                       name="wendyrin"
                       placeholder="To"
                     ></input>
+                    <textarea name="descin" placeholder="Description"></textarea>
                     <button className="submit-btn" type="submit">
                       Add Info
                     </button>
+                    <button onClick={() => this.props.removeWorkFields(index)}>Remove</button>
                   </div>
                 </form>
               );

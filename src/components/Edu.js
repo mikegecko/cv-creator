@@ -60,7 +60,7 @@ class Edu extends Component {
                     <button className="submit-btn" type="submit">
                       Add Info
                     </button>
-                    <button onClick={() => this.props.removeFields(index)}>Remove</button>
+                    <button onClick={() => this.props.removeEduFields(index)}>Remove</button>
                   </div>
                 </form>
               );
