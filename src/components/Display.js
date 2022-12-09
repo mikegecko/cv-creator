@@ -10,24 +10,32 @@ class Display extends Component{
                 <div className="cv-page">
                     <div className="cv-sidebar">
                        <h2 className="cv-sidetitle">{this.props.data.geninfo.name}</h2>
-                        <p className="cv-sideitem">Job title...</p>
+                        <p className="cv-sideitem">{this.props.data.geninfo.currtitle}</p>
                         <h3 className="cv-sideheader">Personal Info</h3>
                         <h4 className="cv-sidetitle">Phone</h4>
                         <p className="cv-sideitem">{this.props.data.geninfo.phone}</p>
                         <h4 className="cv-sidetitle">Email</h4>
                         <p className="cv-sideitem">{this.props.data.geninfo.email}</p>
                         <h3 className="cv-sideheader">Skills</h3>
+                        {this.props.data.skills.map((el,index) => {
+                            return(
+                                <p className="cv-skillitem" key={index}>{el}</p>
+                            );
+                        })}
                     </div>
                     <div className="cv-area">
-                        <p>lorem ipsum</p>
+                        <p className="cv-hero">&emsp;{this.props.data.geninfo.desc}</p>
                         <h3 className="cv-header">Experience</h3>
                         {this.props.data.work.map((el,index) => {
                             return(
                                 <div className="cv-itemcontainer" key={index}>
-                                    <p className="cv-date">2019<br/>- 2022</p>
+                                    <p className="cv-date">{el.startyr} - {el.endyr}</p>
                                     <div>
                                         <h4 className="cv-title">{el.title}</h4>
                                         <p className="cv-info">{el.company}, {el.location}</p>
+                                        <ul className="cv-desc">
+                                            <li>{el.desc}</li>
+                                        </ul>
                                     </div>
                                 </div>
                             )
@@ -35,8 +43,12 @@ class Display extends Component{
                         <h3 className="cv-header">Education</h3>
                         {this.props.data.education.map((el,index) => {
                             return(
-                                <div key={index}>
-                                    <h4>{el.field}, {el.degree}</h4>
+                                <div className="cv-itemcontainer" key={index}>
+                                    <p className="cv-date">{el.gradyr}</p>
+                                    <div>
+                                        <h4 className="cv-title">{el.field}, {el.degree}</h4>
+                                        <p className="cv-info">{el.uname}, {el.city}</p>
+                                    </div>
                                 </div>
                             )
                         })}
