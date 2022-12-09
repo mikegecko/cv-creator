@@ -41,6 +41,27 @@ class Info extends Component {
                   name="phonein"
                   placeholder="Phone #"
                 ></input>
+                <input
+                  type="text"
+                  id="title"
+                  name="titlein"
+                  placeholder="Current Occupation"
+                ></input>
+                <textarea name="textin" placeholder="Description"></textarea>
+                <p className="">Skills</p>
+                {this.props.data.skills.map((el, index) => {
+                  return (
+                    <div className="skilldiv" key={index}>
+                      <input name="skillin" onChange={(event) => this.props.handleSkillChange(index,event)}></input>
+                      <button className="sbutton" onClick={() => this.props.removeSkillField(index)}>
+                        <span className="material-icons md-12">remove</span>
+                      </button>
+                    </div>
+                  );
+                })}
+                <button className="sbutton" onClick={this.props.addSkill}>
+                    <span className="material-icons md-12">add</span>
+                </button>
                 <button className="submit-btn" type="submit">
                   Add Info
                 </button>
