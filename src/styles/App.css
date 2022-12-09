@@ -73,11 +73,14 @@
 .submit-btn{
   margin: .3rem;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.skilldiv{
+  display: flex;
 }
+.sbutton>span{
+  height: 14px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+

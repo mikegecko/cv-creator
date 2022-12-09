@@ -1,3 +1,11 @@
+ul{
+    padding-left: 1rem;
+}
+textarea{
+    resize: none;
+    width: 300px;
+    height: 3rem;
+}
 .cv-page{
     display: flex;
     min-height: 870px;
@@ -16,15 +24,19 @@
     background-color: rgb(42,42,42);
     color: white;
     padding: .5rem .5rem .5rem 1rem;
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 1rem 0;
 }
 .cv-sideitem{
     padding: 0 0 0 1rem;
     margin: 0;
 }
-.cv-sidetitle{
-    padding: 1rem 0 .3rem 1rem;
+.cv-skillitem{
+    padding: .5rem 0 .5rem 1rem;
     margin: 0;
+}
+.cv-sidetitle{
+    padding: 0 0 .3rem 1rem;
+    margin: 1rem 0 0 0;
 }
 .cv-area{
     background-color: whitesmoke;
@@ -48,15 +60,29 @@
     font-style: italic;
     font-size: 15px;
     margin: .5rem 0 .5rem 0;
+    color: rgb(0, 0, 0);
+}
+.cv-desc{
+    margin: 0;
+    font-size: 15px;
+}
+.cv-hero{
+    font-style: italic;
+    line-height: 1.4rem;
 }
 .cv-itemcontainer{
     display: flex;
-    gap: 3rem;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 2rem;
+}
+.cv-itemcontainer>div{
+    width: 100%;
 }
 .cv-date{
     font-size: 14px;
     margin: 0;
     padding: 0;
+    width: 80px
 }
