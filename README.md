@@ -1,4 +1,4 @@
-# CV Application
+# CV Creator
 
-This project was created using react
+A basic resume builder, created using React. Live demo can be found<a href="https://mikegecko.github.io/cv-creator/">here</a>
 
